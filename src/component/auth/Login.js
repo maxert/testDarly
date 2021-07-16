@@ -1,14 +1,10 @@
 import {useForm} from "react-hook-form";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {login} from "../../store/firebaseSlice";
 
 
 const Login = () => {
-    const isLogin = useSelector(state => state.userAuth.initialized)
 
-    if (!isLogin) {
-        return <div>Loading...</div>;
-    }
 
     const {register, handleSubmit, formState: {errors}} = useForm();
     const dispatch = useDispatch();
